@@ -82,8 +82,12 @@ CSRF_TRUSTED_ORIGINS = [DOMAIN]
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DJANGO_DB_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': os.getenv('DB_NAME', BASE_DIR.joinpath('db.sqlite3')),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydb',
+        'USER': 'andreas',
+        'PASSWORD': 'mypw',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 e = os.getenv('DB_USER')
